@@ -63,8 +63,8 @@ if (nextDay <= maxDayOfMonth) {
   }
 }
 
-var lastDay, lastMonth, lastYear;
-lastDay = day - 1;
+var previousDay, previousMonth, previousYear;
+previousDay = day - 1;
 var minDayOfMonth = 1;
 var maxDayOfPreviousMonth;
 
@@ -94,19 +94,19 @@ switch (month) {
     break;
 }
 
-if (lastDay >= minDayOfMonth) {
-  lastMonth = month;
-  lastYear = year;
+if (previousDay >= minDayOfMonth) {
+  previousMonth = month;
+  previousYear = year;
 } else {
-  lastMonth = month - 1;
-  lastDay = maxDayOfPreviousMonth;
-  if (lastMonth < 1) {
-    lastMonth = 12;
-    lastYear = year - 1;
+  previousMonth = month - 1;
+  previousDay = maxDayOfPreviousMonth;
+  if (previousMonth < 1) {
+    previousMonth = 12;
+    previousYear = year - 1;
   } else {
-    lastYear = year;
+    previousYear = year;
   }
 }
 
 alert(`Next date: ${nextDay}-${nextMonth}-${nextYear}`);
-alert(`Last date: ${lastDay}-${lastMonth}-${lastYear}`);
+alert(`Previous date: ${previousDay}-${previousMonth}-${previousYear}`);
